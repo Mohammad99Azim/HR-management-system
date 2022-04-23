@@ -110,14 +110,19 @@ button:hover {
 }
 
 main {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
 }
 
 main .person {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1em;
     color: #ecf0f1;
+}
+
+main .employeeNS {
+    margin: 10px;
 }
 
 footer {

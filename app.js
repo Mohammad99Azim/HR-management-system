@@ -1,3 +1,5 @@
+let employyeeArr = [];
+
 function Person(Employee_ID, Full_Name, Department, Level, Image_URL, Salary) {
     this.Employee_ID = Employee_ID;
     this.Full_Name = Full_Name;
@@ -5,6 +7,8 @@ function Person(Employee_ID, Full_Name, Department, Level, Image_URL, Salary) {
     this.Level = Level;
     this.Image_URL = Image_URL;
     this.Salary = Salary;
+    employyeeArr.push(this);
+
 }
 
 Person.prototype.salaryCalc = function() {
@@ -25,9 +29,11 @@ Person.prototype.salaryCalc = function() {
 
 Person.prototype.render = function() {
     document.getElementById('person').innerHTML += (`
+    <div class="employeeNS">
         <p>Name : ${this.Full_Name}</p>
         <p>Net Salary : ${this.Salary}</p>
         <br><br>
+    <div>
     `);
 }
 
@@ -39,20 +45,32 @@ let Omar = new Person(1004, 'Omar Zaid', 'Development', 'Senior', '', 0);
 let Rana = new Person(1005, 'Rana Saleh', 'Development', 'Junior', '', 0);
 let Hadi = new Person(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior', '', 0);
 
-Ghazi.salaryCalc();
-Ghazi.render();
 
-Lana.salaryCalc();
-Lana.render();
 
-Tamara.salaryCalc();
-Tamara.render();
+for (let i = 0; i < employyeeArr.length; i++) {
+    employyeeArr[i].salaryCalc();
+    employyeeArr[i].render();
+}
 
-Omar.salaryCalc();
-Omar.render();
+// Ghazi.salaryCalc();
+// Ghazi.render();
 
-Rana.salaryCalc();
-Rana.render();
 
-Hadi.salaryCalc();
-Hadi.render();
+// Lana.salaryCalc();
+// Lana.render();
+
+// Tamara.salaryCalc();
+// Tamara.render();
+
+// Safi.salaryCalc();
+// Safi.render();
+
+
+// Omar.salaryCalc();
+// Omar.render();
+
+// Rana.salaryCalc();
+// Rana.render();
+
+// Hadi.salaryCalc();
+// Hadi.render();
