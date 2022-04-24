@@ -29,8 +29,66 @@
     </header>
     <main>
 
+        <div class="b">
+            <form class="formEE" id="Employee">
+
+                <div class="form-control">
+                    <label for="name" id="name-label">
+                        Full name
+                  </label>
+                    <input type="text" id="name" placeholder="Enter Full name" required>
+                </div>
+
+                <div class="form-control">
+                    <label for="Department">Department:</label>
+                    <select name="Department" id="Department" form="Employee">
+                        <option value="Administration">Administration</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Development">Development</option>
+                        <option value="Finance">Finance</option>
+                        </select>
+                </div>
+
+                <div class="form-control">
+
+
+                    <label for="cars">Level:</label>
+                    <select name="Level" id="Level" form="Employee">
+                    <option value="Junior">Junior</option>
+                    <option value="Mid-Senior">Mid-Senior</option>
+                    <option value="Senior">Senior</option>
+                    </select>
+
+
+                </div>
+
+                <div class="form-control">
+                    <label for="image">
+                        Image Url:
+                  </label>
+                    <input type="text" id="image" placeholder="Enter Image Url" required>
+                </div>
+
+
+                <input class="btnn" type="submit" value="submit">
+                </input>
+
+            </form>
+        </div>
+        <h3>Administration</h3>
         <div class="person" id="person">
 
+        </div>
+        <h3>Development</h3>
+        <div class="person" id="person2">
+
+        </div>
+        <h3>Marketing</h3>
+        <div class="person" id="person3">
+
+        </div>
+        <h3>Finance</h3>
+        <div class="person" id="person4">
         </div>
 
     </main>
