@@ -224,6 +224,30 @@ select {
     font-weight: 600;
 }
 
+table {
+    border: 1px solid green;
+    color: white;
+    padding: 15px;
+    margin: auto;
+}
+
+table .tableFooter {
+    background-color: lime;
+    color: black;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid green;
+    border-collapse: collapse;
+}
+
 
 /* ///////////////////////////// */
 
