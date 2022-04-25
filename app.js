@@ -2,8 +2,9 @@ let employyeeArr = [];
 let idArr = [];
 let employeeForm = document.getElementById('Employee');
 
-employeeForm.addEventListener('submit', handelSubit);
 
+
+employeeForm.addEventListener('submit', handelSubit);
 
 
 function Person(Employee_ID, Full_Name, Department, Level, Image_URL, Salary) {
@@ -59,7 +60,31 @@ function handelSubit(event) {
     newEmployee.salaryCalc();
     newEmployee.idFounder();
     newEmployee.render();
+    saved(employyeeArr);
+
 }
+
+function saved(data) {
+    let stringObj = JSON.stringify(data);
+    localStorage.setItem("thePersone", stringObj);
+}
+
+function getData() {
+    let strings = localStorage.getItem('thePersone');
+    let arrData = JSON.parse(strings);
+
+    for (let i = employyeeArr.length; i < arrData.length; i++) {
+        var element = new Person(0, arrData[i].Full_Name, arrData[i].Department, arrData[i].Level, arrData[i].Image_URL, 0);
+        element.salaryCalc();
+        element.idFounder();
+        element.render();
+    }
+
+
+
+}
+
+
 
 Person.prototype.render = function() {
 
@@ -139,6 +164,8 @@ for (let i = 0; i < employyeeArr.length; i++) {
     employyeeArr[i].idFounder();
     employyeeArr[i].render();
 }
+getData();
+
 
 // Ghazi.salaryCalc();
 // Ghazi.render();
